@@ -182,18 +182,18 @@ class ContentExtractor(object):
                 # specifier, e.g. /2014/04/
                 return None
 
-        date_match = re.search(urls.DATE_REGEX, url)
-        if date_match:
-            date_str = date_match.group(0)
-            datetime_obj = parse_date_str(date_str)
-            if datetime_obj:
-                return datetime_obj
+#        date_match = re.search(urls.DATE_REGEX, url)
+#        if date_match:
+#            date_str = date_match.group(0)
+#            datetime_obj = parse_date_str(date_str)
+#            if datetime_obj:
+#                return datetime_obj
 
         PUBLISH_DATE_TAGS = [
             {'attribute': 'property', 'value': 'rnews:datePublished', 'content': 'content'},
             {'attribute': 'property', 'value': 'article:published_time', 'content': 'content'},
             {'attribute': 'name', 'value': 'OriginalPublicationDate', 'content': 'content'},
-            {'attribute': 'itemprop', 'value': 'datePublished', 'content': 'datetime'},
+            {'attribute': 'itemprop', 'value': 'datePublished', 'content': 'content'},
             {'attribute': 'property', 'value': 'og:published_time', 'content': 'content'},
             {'attribute': 'name', 'value': 'article_date_original', 'content': 'content'},
             {'attribute': 'name', 'value': 'publication_date', 'content': 'content'},
